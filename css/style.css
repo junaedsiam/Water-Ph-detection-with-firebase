@@ -11,7 +11,7 @@ a{
 
 body{
     width:100%;
-    height:100vh;
+    min-height:100vh;
     display:flex;
     flex-direction: column;
     justify-content: center;
@@ -23,7 +23,7 @@ body{
 section{
     display:flex;
     min-height:100vh;
-    width:100vw;
+    width:100%;
 }
 
 section aside{
@@ -99,7 +99,7 @@ main .places , main .result-parent{
     display: flex;
     justify-content: center;
     align-items: flex-end;
-    height: calc( 100vh - 49px - 1rem );
+    min-height: calc( 100vh - 49px - 1rem );
     flex-direction: column;
 }
 
@@ -186,4 +186,63 @@ main .places .places-portion{
 
 .ideal-table table{
     vertical-align:middle;
+}
+
+/* Responsive CSS*/
+@media only screen and (max-width:991px){
+    section{
+        flex-direction:column;
+    }
+    section aside .content{
+        transform:translateX(0)
+    }
+    section aside .content h1{
+        margin-top:1rem;
+        font-size:1.8rem;
+        text-align:center;
+    }
+    section aside .content p{
+        display:none;
+    }
+    ul.nav{
+        justify-content: center!important;
+    }
+    main .nav-link{
+        font-size:1.1rem;
+        padding:0.4rem;
+
+    }
+    main .places, main .result-parent{
+        min-height:auto;
+        align-items:center;
+    }
+    .places .display-4{
+        font-size:2rem;
+        margin:2rem 0;
+    }
+    .places-portion{
+        flex-direction:column;
+    }
+    .places-portion a{
+        padding:2rem;
+        margin:0;
+        margin-bottom:1rem;
+    }
+    .result-parent{
+        margin-top:2rem;
+    }
+    .title-result .display-4{
+        font-size:2rem;
+        margin-bottom:2rem;
+    }
+    .property-result{
+        display:flex;
+        flex-direction: column;
+       
+    }
+    .property-result > div{
+        margin-bottom:1rem;
+        margin-left:0;
+    }
+
 }
